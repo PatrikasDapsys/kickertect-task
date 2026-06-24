@@ -1,0 +1,13 @@
+@use '../premier-league-tokens' as tokens;
+
+.premier-league-header {
+  background-color: tokens.$premier-header-bg;
+  padding: 16px 20px;
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 700;
+    color: tokens.$premier-white;
+  }
+}

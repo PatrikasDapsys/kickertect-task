@@ -13,7 +13,7 @@ body {
 }
 
 body {
-  font-family: fonts.$font-inter;
+  font-family: fonts.$font-premier;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -24,4 +24,10 @@ body {
 .app-shell {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 1rem;
+}
+
+.scoreboards__container {
+  display: flex;
+  justify-content: space-between;
 }

@@ -1,8 +1,15 @@
+import { EurobasketScoreboard } from '../features/scoreboards/components/eurobasket/EurobasketScoreboard'
+import { PremierLeagueScoreboard } from '../features/scoreboards/components/premier-league/PremierLeagueScoreboard'
+import { WimbledonScoreboard } from '../features/scoreboards/components/wimbledon/WimbledonScoreboard'
+
 function App() {
   return (
     <main className="app-shell">
-      <h1>Sports Standings</h1>
-      <p>Project scaffold ready. Scoreboards will be added in later steps.</p>
+      <div className="scoreboards__container">
+        <PremierLeagueScoreboard />
+        <EurobasketScoreboard />
+        <WimbledonScoreboard />
+      </div>
     </main>
   )
 }

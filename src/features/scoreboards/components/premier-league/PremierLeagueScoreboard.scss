@@ -1,0 +1,11 @@
+@use '../../../../styles/fonts' as fonts;
+@use './premier-league-tokens' as tokens;
+
+.premier-scoreboard {
+  font-family: fonts.$font-premier;
+  max-width: 420px;
+  background-color: tokens.$premier-white;
+  border-radius: tokens.$premier-radius;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  overflow: hidden;
+}
