@@ -1,0 +1,36 @@
+.scoreboard-table {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #000;
+
+  &__row {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #d3d5d6;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--header {
+      font-weight: 700;
+      background-color: #F3F4F5;
+    }
+  }
+
+  &__cell {
+    flex: 0 0 40px;
+    text-align: center;
+
+    &--start {
+      flex: 1;
+      text-align: left;
+    }
+
+    &--emphasis {
+      font-weight: 700;
+    }
+  }
+}
