@@ -51,8 +51,8 @@ src/
   app/                  # app shell / composition root (App.tsx, main.tsx)
   components/           # shared, theme-agnostic UI primitives
   features/
-    tournaments/        # tournaments feature
-      components/        # tournament UI
+    scoreboards/        # scoreboards feature
+      components/        # scoreboard UI
       state/             # context + reducer
       domain/            # pure logic (scoring, standings, match rules)
       services/          # persistence (repository + localStorage impl)
