@@ -1,0 +1,9 @@
+@use 'variables' as vars;
+
+@mixin base-scoreboard {
+  max-width: vars.$base-scoreboard-width;
+  width: 100%;
+  border-radius: vars.$base-scoreboard-radius;
+  box-shadow: vars.$base-scoreboard-shadow;
+  overflow: hidden;
+}

@@ -1,0 +1,13 @@
+@use '../eurobasket-tokens' as tokens;
+
+.eurobasket-header {
+  &__title {
+    margin: 0 0 16px;
+    font-size: 20px;
+    color: tokens.$eurobasket-text;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: flex;
+    gap: tokens.$eurobasket-gap;
+  }
+}
