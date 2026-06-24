@@ -1,0 +1,28 @@
+@use '../wimbledon-tokens.scss' as tokens;
+
+.wimbledon-body {
+  &__actions {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: tokens.$wimbledon-gap;
+  }
+
+  &__actions-button {
+    background-color: tokens.$wimbledon-bg;
+    color: tokens.$wimbledon-text;
+    padding: 12px 14px;
+    border-radius: tokens.$wimbledon-radius;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &--secondary {
+      background-color: tokens.$wimbledon-action;
+    }
+  }
+}

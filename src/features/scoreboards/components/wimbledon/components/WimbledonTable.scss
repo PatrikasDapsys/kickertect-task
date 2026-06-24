@@ -1,0 +1,6 @@
+@use '../wimbledon-tokens' as tokens;
+
+.wimbledon-table {
+  padding: 20px;
+  border-top: 1px solid tokens.$wimbledon-bg;
+}

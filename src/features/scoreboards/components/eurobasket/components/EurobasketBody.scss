@@ -6,19 +6,20 @@
     justify-content: space-between;
     gap: tokens.$eurobasket-gap;
     margin-bottom: 24px;
+    padding-top: 20px;
   }
 
   &__actions-button {
-    padding: 6px 12px;
+    padding: 8px 12px;
     background-color: tokens.$eurobasket-primary;
     color: tokens.$eurobasket-text;
     border: none;
     border-radius: tokens.$eurobasket-radius;
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: opacity 0.15s ease;
 
     &:hover {
-      background-color: darken(tokens.$eurobasket-primary, 10%);
+      opacity: 0.9;
     }
   }
 

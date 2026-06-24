@@ -98,10 +98,10 @@
     border: none;
     border-radius: tokens.$premier-radius;
     cursor: pointer;
-    transition: background-color 0.15s ease;
+    transition: opacity 0.15s ease;
 
     &:hover {
-      background-color: darken(tokens.$premier-primary, 10%);
+      opacity: 0.9;
     }
   }
 }

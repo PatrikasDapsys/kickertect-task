@@ -1,2 +1,9 @@
+@use '../../../../styles/mixins' as mixins;
+@use '../../../../styles/fonts' as fonts;
+@use './wimbledon-tokens.scss' as tokens;
+
 .wimbledon-scoreboard {
+  @include mixins.base-scoreboard;
+  font-family: fonts.$font-wimbledon;
+  color: tokens.$wimbledon-text;
 }
