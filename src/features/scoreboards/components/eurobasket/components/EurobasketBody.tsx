@@ -1,5 +1,5 @@
 import './EurobasketBody.scss'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
@@ -20,6 +20,10 @@ export function EurobasketBody() {
   const teams = useAppSelector(selectEurobasketTeams)
   const matches = useAppSelector(selectEurobasketMatches)
 
+  const idPrefix = useId()
+  const addTeamButtonId = `${idPrefix}-add-team`
+  const addScoreButtonId = `${idPrefix}-add-score`
+
   const [openForm, setOpenForm] = useState<eurobasketFormEnum | null>(null)
 
   const usedCodes = teams
@@ -35,7 +39,7 @@ export function EurobasketBody() {
         <button
           className="eurobasket-body__actions-button"
           type="button"
-          id="add-team-button"
+          id={addTeamButtonId}
           aria-expanded={openForm === eurobasketFormEnum.TEAM}
           onClick={() => toggle(eurobasketFormEnum.TEAM)}
         >
@@ -44,7 +48,7 @@ export function EurobasketBody() {
         <button
           className="eurobasket-body__actions-button"
           type="button"
-          id="add-score-button"
+          id={addScoreButtonId}
           aria-expanded={openForm === eurobasketFormEnum.SCORE}
           onClick={() => toggle(eurobasketFormEnum.SCORE)}
         >

@@ -2,7 +2,7 @@
 
 Manage three tournaments — **Premier League**, **Eurobasket**, and **Wimbledon** — from a single page. Add teams or players, enter match results, and watch the standings update in real time.
 
-**Repository:** [github.com/PatrikasDapsys/kickertect-task](https://github.com/PatrikasDapsys/kickertect-task)
+**Repository:** [github.com/PatrikasDapsys/kickertech-task](https://github.com/PatrikasDapsys/kickertech-task)
 
 ## Overview
 
@@ -48,8 +48,8 @@ Each pairing can only be played once. Standings sort by points, then wins.
 Requires Node.js 18+.
 
 ```bash
-git clone git@github.com:PatrikasDapsys/kickertect-task.git
-cd kickertect-task
+git clone git@github.com:PatrikasDapsys/kickertech-task.git
+cd kickertech-task
 npm install
 npm run dev
 ```

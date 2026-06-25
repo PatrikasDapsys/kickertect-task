@@ -1,5 +1,5 @@
 import './WimbledonBody.scss'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
@@ -18,6 +18,10 @@ export function WimbledonBody() {
   const teams = useAppSelector(selectWimbledonTeams)
   const matches = useAppSelector(selectWimbledonMatches)
 
+  const idPrefix = useId()
+  const addPlayerButtonId = `${idPrefix}-add-player`
+  const addScoreButtonId = `${idPrefix}-add-score`
+
   const [openForm, setOpenForm] = useState<wimbledonFormEnum | null>(null)
 
   const toggle = (form: wimbledonFormEnum) =>
@@ -29,7 +33,7 @@ export function WimbledonBody() {
         <button
           className="wimbledon-body__actions-button"
           type="button"
-          id="add-team-button"
+          id={addPlayerButtonId}
           aria-expanded={openForm === wimbledonFormEnum.PLAYER}
           onClick={() => toggle(wimbledonFormEnum.PLAYER)}
         >
@@ -38,7 +42,7 @@ export function WimbledonBody() {
         <button
           className="wimbledon-body__actions-button wimbledon-body__actions-button--secondary"
           type="button"
-          id="add-score-button"
+          id={addScoreButtonId}
           aria-expanded={openForm === wimbledonFormEnum.SCORE}
           onClick={() => toggle(wimbledonFormEnum.SCORE)}
         >
