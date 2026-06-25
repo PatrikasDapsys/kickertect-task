@@ -1,54 +1,104 @@
 # Sports Standings App
 
-A Single Page Application (SPA) to manage sports tournaments. It hosts three
-standings tables — **Premier League**, **Eurobasket**, and **Wimbledon** — where
-users can add teams/players, record match results, and see a standings table
-that auto-updates and sorts by points.
+Manage three tournaments — **Premier League**, **Eurobasket**, and **Wimbledon** — from a single page. Add teams or players, enter match results, and watch the standings update in real time.
+
+**Repository:** [github.com/PatrikasDapsys/kickertect-task](https://github.com/PatrikasDapsys/kickertect-task)
+
+## Overview
+
+The app renders three independent scoreboards side by side (stacked on mobile). Each has its own Redux slice, visual theme, and UI layout, but they all share the same underlying forms, standings logic, and persistence layer.
+
+On first visit, each tournament loads with sample teams/players and matches. After that, state is kept in `localStorage` and restored on refresh.
+
+## Scoreboards
+
+### Premier League
+
+Neutral palette with Inter/Roboto. The add-team and add-score forms are always visible above a full standings table (P, W, D, L, Pts).
+
+### Eurobasket
+
+Green and orange styling with Montserrat. Teams are picked from a country list and shown with flag icons. Add forms open from toggle buttons; recorded matches appear in a results list above the standings.
+
+### Wimbledon
+
+Monospace Space Mono typography with a compact layout. Players are added by name. The standings table uses win/loss icons instead of a draws column (M, W, L, Pts).
+
+## Scoring
+
+| Result | Points |
+| ------ | ------ |
+| Win    | 3      |
+| Draw   | 1      |
+| Loss   | 0      |
+
+Each pairing can only be played once. Standings sort by points, then wins.
 
 ## Tech Stack
 
-- **React 18 + TypeScript + Vite**
-- **State:** Redux Toolkit (one slice per tournament)
-- **Persistence:** `redux-persist` with a localStorage `WebStorage` adapter
-- **Styling:** SCSS with CSS variables per theme, mobile-first
-- **Fonts:** `@fontsource` (Inter/Roboto, Montserrat, Space Mono)
-- **Icons:** FontAwesome; **Flags:** `flag-icons` CSS library
-- **Tooling:** ESLint + Prettier
+- React 19, TypeScript, Vite
+- Redux Toolkit + `redux-persist`
+- SCSS with per-tournament design tokens
+- Font Awesome, `flag-icons`, `@fontsource`
+- Vitest + React Testing Library
+- ESLint, Prettier
 
 ## Getting Started
 
+Requires Node.js 18+.
+
 ```bash
-# Install dependencies
+git clone git@github.com:PatrikasDapsys/kickertect-task.git
+cd kickertect-task
 npm install
-
-# Start the dev server
 npm run dev
+```
 
-# Type-check and build for production
-npm run build
+The dev server runs at `http://localhost:5173` by default.
 
-# Preview the production build
-npm run preview
+```bash
+npm run build    # type-check + production build
+npm run preview  # serve dist/ locally
 ```
 
 ## Scripts
 
-| Script            | Description                              |
-| ----------------- | ---------------------------------------- |
-| `npm run dev`     | Start the Vite dev server                |
-| `npm run build`   | Type-check and build for production      |
-| `npm run preview` | Preview the production build locally     |
-| `npm run lint`    | Run ESLint                               |
-| `npm run format`  | Format source files with Prettier        |
+| Script | Description |
+| ------ | ----------- |
+| `npm run dev` | Dev server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build |
+| `npm run test` | Tests in watch mode |
+| `npm run test:run` | Single test run |
+| `npm run lint` | ESLint |
+| `npm run format` | Prettier |
 
 ## Project Structure
 
 ```
 src/
-  app/                  # composition root: App.tsx, main.tsx, store, hooks, storage
-  features/
-    scoreboards/        # scoreboards feature
-      components/        # scoreboard UI (per tournament + shared)
-      store/            # Redux Toolkit slices, selectors, standings logic, initial state
-  styles/               # global SCSS: tokens, mixins, breakpoints, fonts
+  app/                    # Store, persist config, typed hooks
+  features/scoreboards/
+    components/
+      premier-league/
+      eurobasket/
+      wimbledon/
+      shared/             # ScoreboardTable, TournamentForm
+    store/
+      slices/             # One slice per tournament
+      initialState/       # Seed data
+      computeStandings.ts
+      selectors.ts
+  styles/                 # Global SCSS tokens and mixins
+  test/                   # Vitest setup and helpers
+```
+
+Standings are derived on read — slices store only `teams` and `matches`, and selectors run `computeStandings` to produce the table rows.
+
+## Deployment
+
+Build the static output and deploy `dist/` to any static host (Vercel, Netlify, GitHub Pages, etc.). If serving from a subpath, set the `base` option in `vite.config.ts`.
+
+```bash
+npm run build
 ```
