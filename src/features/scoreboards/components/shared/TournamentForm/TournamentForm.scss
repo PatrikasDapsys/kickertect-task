@@ -1,5 +1,6 @@
 @use '../../premier-league/premier-league-tokens' as premier;
 @use '../../eurobasket/eurobasket-tokens' as eurobasket;
+@use '../../wimbledon/wimbledon-tokens' as wimbledon;
 
 .tournament-form {
   display: flex;
@@ -123,6 +124,32 @@
     .tournament-form__button {
       color: eurobasket.$eurobasket-text;
       background-color: eurobasket.$eurobasket-primary;
+    }
+  }
+
+  // Wimbledon theme: cool neutrals with green accent
+  &--wimbledon {
+    .tournament-form__label {
+      color: #111;
+    }
+
+    .tournament-form__control {
+      color: #111;
+      background-color: #fff;
+      border: 1px solid #ced4da;
+
+      &::placeholder {
+        color: #6c757d;
+      }
+
+      &:focus {
+        border-color: wimbledon.$wimbledon-bg;
+      }
+    }
+
+    .tournament-form__button {
+      color: wimbledon.$wimbledon-text;
+      background-color: wimbledon.$wimbledon-bg;
     }
   }
 }

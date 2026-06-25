@@ -22,6 +22,11 @@ export function ScoreboardTableRow({ row, columns }: ScoreboardTableRowProps) {
             />
           )}
           {row[col.key]}
+          {col.icon && (
+            <span className="scoreboard-table__cell-adornment" aria-hidden="true">
+              {col.icon}
+            </span>
+          )}
         </span>
       ))}
     </div>

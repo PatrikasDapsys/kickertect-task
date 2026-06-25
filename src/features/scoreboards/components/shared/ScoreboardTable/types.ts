@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import type {
   columnAlignEnum,
   scoreboardTableVariantEnum,
@@ -20,6 +21,7 @@ export interface StandingsColumn {
   label: string
   align?: columnAlignEnum
   emphasis?: boolean
+  icon?: ReactNode
 }
 
 export interface ScoreboardTableProps {

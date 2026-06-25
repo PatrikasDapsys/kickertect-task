@@ -12,12 +12,14 @@ import {
 import { createLocalStorage } from './storage'
 import premierLeagueReducer from '../features/scoreboards/store/premierLeagueSlice'
 import eurobasketReducer from '../features/scoreboards/store/eurobasketSlice'
+import wimbledonReducer from '../features/scoreboards/store/wimbledonSlice'
 
 const storage = createLocalStorage()
 
 const rootReducer = combineReducers({
   premierLeague: premierLeagueReducer,
   eurobasket: eurobasketReducer,
+  wimbledon: wimbledonReducer,
 })
 
 const persistConfig = {

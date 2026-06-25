@@ -19,7 +19,11 @@ export function PremierLeagueTable() {
 
   return (
     <div className="premier-league-table">
-      <ScoreboardTable rows={rows} columns={DEFAULT_COLUMNS} />
+      <ScoreboardTable 
+        rows={rows}
+        columns={DEFAULT_COLUMNS}
+        maxHeight={200}
+      />
     </div>
   )
 }

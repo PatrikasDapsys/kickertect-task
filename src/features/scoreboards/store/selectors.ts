@@ -19,9 +19,19 @@ export const selectEurobasketStandings = createSelector(
   (teams, matches) => computeStandings(teams, matches),
 )
 
+const selectWimbledonTeams = (state: RootState) => state.wimbledon.teams
+const selectWimbledonMatches = (state: RootState) => state.wimbledon.matches
+
+export const selectWimbledonStandings = createSelector(
+  [selectWimbledonTeams, selectWimbledonMatches],
+  (teams, matches) => computeStandings(teams, matches),
+)
+
 export {
   selectPremierLeagueTeams,
   selectPremierLeagueMatches,
   selectEurobasketTeams,
   selectEurobasketMatches,
+  selectWimbledonTeams,
+  selectWimbledonMatches,
 }

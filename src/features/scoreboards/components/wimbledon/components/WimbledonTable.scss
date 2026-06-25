@@ -2,5 +2,12 @@
 
 .wimbledon-table {
   padding: 20px;
-  border-top: 1px solid tokens.$wimbledon-bg;
+
+  &__icon--win {
+    color: green;
+  }
+
+  &__icon--loss {
+    color: red;
+  }
 }
