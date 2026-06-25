@@ -1,5 +1,5 @@
 @use '../_wimbledon-tokens' as tokens;
-@use '../../../../../styles/colors' as colors;
+@use '@/styles/colors' as colors;
 
 .wimbledon-table {
   padding: 20px;

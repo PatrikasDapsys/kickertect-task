@@ -1,4 +1,4 @@
-import type { StandingsRow } from '../components/shared/ScoreboardTable/types'
+import type { StandingsRow } from '@/features/scoreboards/components/shared/ScoreboardTable/types'
 import type { Match, Team } from './types'
 
 const POINTS_WIN = 3

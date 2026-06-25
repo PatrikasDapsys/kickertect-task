@@ -1,6 +1,6 @@
 import type { ScoreboardTableRowProps } from './types'
 import { columnAlignEnum } from './ScoreboardTableEnums'
-import { cx } from '../utils/cx'
+import { cx } from '@/features/scoreboards/components/shared/utils/cx'
 
 export function ScoreboardTableRow({ row, columns }: ScoreboardTableRowProps) {
   return (

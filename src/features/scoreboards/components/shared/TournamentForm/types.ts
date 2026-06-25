@@ -1,5 +1,5 @@
-import type { Country } from '../../../store/countries'
-import type { Match, MatchInput, Team } from '../../../store/types'
+import type { Country } from '@/features/scoreboards/store/countries'
+import type { Match, MatchInput, Team } from '@/features/scoreboards/store/types'
 import type { tournamentFormVariantEnum } from './TournamentFormEnums'
 
 export interface AddTeamFormProps {

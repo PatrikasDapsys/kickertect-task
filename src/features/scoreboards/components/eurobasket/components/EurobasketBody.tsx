@@ -2,16 +2,16 @@ import './EurobasketBody.scss'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { useAppDispatch, useAppSelector } from '../../../../../app/hooks'
-import { matchAdded, teamAdded } from '../../../store/slices/eurobasketSlice'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { matchAdded, teamAdded } from '@/features/scoreboards/store/slices/eurobasketSlice'
 import {
   selectEurobasketMatches,
   selectEurobasketTeams,
-} from '../../../store/selectors'
-import { EUROBASKET_COUNTRIES } from '../../../store/countries'
-import { AddTeamForm } from '../../shared/TournamentForm/AddTeamForm'
-import { AddScoreForm } from '../../shared/TournamentForm/AddScoreForm'
-import { tournamentFormVariantEnum } from '../../shared/TournamentForm/TournamentFormEnums'
+} from '@/features/scoreboards/store/selectors'
+import { EUROBASKET_COUNTRIES } from '@/features/scoreboards/store/countries'
+import { AddTeamForm } from '@/features/scoreboards/components/shared/TournamentForm/AddTeamForm'
+import { AddScoreForm } from '@/features/scoreboards/components/shared/TournamentForm/AddScoreForm'
+import { tournamentFormVariantEnum } from '@/features/scoreboards/components/shared/TournamentForm/TournamentFormEnums'
 import { eurobasketFormEnum } from './EurobasketEnums'
 import { EurobasketMatches } from './EurobasketMatches'
 

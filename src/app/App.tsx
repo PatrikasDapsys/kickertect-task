@@ -1,6 +1,6 @@
-import { EurobasketScoreboard } from '../features/scoreboards/components/eurobasket/EurobasketScoreboard'
-import { PremierLeagueScoreboard } from '../features/scoreboards/components/premier-league/PremierLeagueScoreboard'
-import { WimbledonScoreboard } from '../features/scoreboards/components/wimbledon/WimbledonScoreboard'
+import { EurobasketScoreboard } from '@/features/scoreboards/components/eurobasket/EurobasketScoreboard'
+import { PremierLeagueScoreboard } from '@/features/scoreboards/components/premier-league/PremierLeagueScoreboard'
+import { WimbledonScoreboard } from '@/features/scoreboards/components/wimbledon/WimbledonScoreboard'
 
 function App() {
   return (

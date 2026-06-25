@@ -1,5 +1,5 @@
 import { createTournamentSlice } from './createTournamentSlice'
-import { initialWimbledonState } from '../initialState/initialWimbledonState'
+import { initialWimbledonState } from '@/features/scoreboards/store/initialState/initialWimbledonState'
 
 const wimbledonSlice = createTournamentSlice('wimbledon', initialWimbledonState)
 

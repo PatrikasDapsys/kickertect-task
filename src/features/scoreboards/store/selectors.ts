@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit'
-import type { RootState } from '../../../app/store'
+import type { RootState } from '@/app/store'
 import { computeStandings } from './computeStandings'
 
 const selectPremierLeagueTeams = (state: RootState) => state.premierLeague.teams

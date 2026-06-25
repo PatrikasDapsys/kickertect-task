@@ -1,11 +1,11 @@
 import './WimbledonTable.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons'
-import { ScoreboardTable } from '../../shared/ScoreboardTable/ScoreboardTable'
-import { columnAlignEnum } from '../../shared/ScoreboardTable/ScoreboardTableEnums'
-import type { StandingsColumn } from '../../shared/ScoreboardTable/types'
-import { useAppSelector } from '../../../../../app/hooks'
-import { selectWimbledonStandings } from '../../../store/selectors'
+import { ScoreboardTable } from '@/features/scoreboards/components/shared/ScoreboardTable/ScoreboardTable'
+import { columnAlignEnum } from '@/features/scoreboards/components/shared/ScoreboardTable/ScoreboardTableEnums'
+import type { StandingsColumn } from '@/features/scoreboards/components/shared/ScoreboardTable/types'
+import { useAppSelector } from '@/app/hooks'
+import { selectWimbledonStandings } from '@/features/scoreboards/store/selectors'
 
 const WIMBLEDON_COLUMNS: StandingsColumn[] = [
   { key: 'team', label: 'Player', align: columnAlignEnum.START },

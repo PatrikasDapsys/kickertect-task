@@ -1,6 +1,6 @@
 @use '../eurobasket-tokens' as tokens;
-@use '../../../../../styles/mixins' as mixins;
-@use '../../../../../styles/colors' as colors;
+@use '@/styles/mixins' as mixins;
+@use '@/styles/colors' as colors;
 
 $max-matches-height: 76px;
 

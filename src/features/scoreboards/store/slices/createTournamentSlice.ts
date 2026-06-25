@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { Match, MatchInput, Team, TournamentState } from '../types'
+import type { Match, MatchInput, Team, TournamentState } from '@/features/scoreboards/store/types'
 
 export interface TeamInput {
   name: Team['name']

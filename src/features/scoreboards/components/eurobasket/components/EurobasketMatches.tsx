@@ -1,5 +1,5 @@
 import './EurobasketMatches.scss'
-import type { Match, Team } from '../../../store/types'
+import type { Match, Team } from '@/features/scoreboards/store/types'
 
 interface EurobasketMatchesProps {
   matches: Match[]

@@ -1,4 +1,4 @@
-import type { TournamentState } from '../types'
+import type { TournamentState } from '@/features/scoreboards/store/types'
 
 const TEAM_IDS = {
   manU: 'pl-team-man-u',

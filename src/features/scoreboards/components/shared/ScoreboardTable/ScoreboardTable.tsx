@@ -2,7 +2,7 @@ import './ScoreboardTable.scss'
 import { columnAlignEnum, scoreboardTableVariantEnum } from './ScoreboardTableEnums'
 import { ScoreboardTableRow } from './ScoreboardTableRow'
 import type { ScoreboardTableProps, StandingsColumn } from './types'
-import { cx } from '../utils/cx'
+import { cx } from '@/features/scoreboards/components/shared/utils/cx'
 
 const DEFAULT_COLUMNS: StandingsColumn[] = [
   { key: 'team', label: 'Team', align: columnAlignEnum.START },

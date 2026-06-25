@@ -1,6 +1,6 @@
 import './TournamentForm.scss'
 import { useId, useState } from 'react'
-import { cx } from '../utils/cx'
+import { cx } from '@/features/scoreboards/components/shared/utils/cx'
 import type { AddTeamFormProps } from './types'
 import { tournamentFormVariantEnum } from './TournamentFormEnums'
 

@@ -2,15 +2,15 @@ import './WimbledonBody.scss'
 import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { useAppDispatch, useAppSelector } from '../../../../../app/hooks'
-import { matchAdded, teamAdded } from '../../../store/slices/wimbledonSlice'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { matchAdded, teamAdded } from '@/features/scoreboards/store/slices/wimbledonSlice'
 import {
   selectWimbledonMatches,
   selectWimbledonTeams,
-} from '../../../store/selectors'
-import { AddTeamForm } from '../../shared/TournamentForm/AddTeamForm'
-import { AddScoreForm } from '../../shared/TournamentForm/AddScoreForm'
-import { tournamentFormVariantEnum } from '../../shared/TournamentForm/TournamentFormEnums'
+} from '@/features/scoreboards/store/selectors'
+import { AddTeamForm } from '@/features/scoreboards/components/shared/TournamentForm/AddTeamForm'
+import { AddScoreForm } from '@/features/scoreboards/components/shared/TournamentForm/AddScoreForm'
+import { tournamentFormVariantEnum } from '@/features/scoreboards/components/shared/TournamentForm/TournamentFormEnums'
 import { wimbledonFormEnum } from './WimbledonEnums'
 
 export function WimbledonBody() {

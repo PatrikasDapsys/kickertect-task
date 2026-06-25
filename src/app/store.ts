@@ -10,9 +10,9 @@ import {
   REHYDRATE,
 } from 'redux-persist'
 import { createLocalStorage } from './storage'
-import premierLeagueReducer from '../features/scoreboards/store/slices/premierLeagueSlice'
-import eurobasketReducer from '../features/scoreboards/store/slices/eurobasketSlice'
-import wimbledonReducer from '../features/scoreboards/store/slices/wimbledonSlice'
+import premierLeagueReducer from '@/features/scoreboards/store/slices/premierLeagueSlice'
+import eurobasketReducer from '@/features/scoreboards/store/slices/eurobasketSlice'
+import wimbledonReducer from '@/features/scoreboards/store/slices/wimbledonSlice'
 
 const storage = createLocalStorage()
 

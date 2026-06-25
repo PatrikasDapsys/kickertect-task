@@ -1,12 +1,12 @@
 import './EurobasketTable.scss'
-import { ScoreboardTable } from '../../shared/ScoreboardTable/ScoreboardTable'
+import { ScoreboardTable } from '@/features/scoreboards/components/shared/ScoreboardTable/ScoreboardTable'
 import {
   columnAlignEnum,
   scoreboardTableVariantEnum,
-} from '../../shared/ScoreboardTable/ScoreboardTableEnums'
-import type { StandingsColumn } from '../../shared/ScoreboardTable/types'
-import { useAppSelector } from '../../../../../app/hooks'
-import { selectEurobasketStandings } from '../../../store/selectors'
+} from '@/features/scoreboards/components/shared/ScoreboardTable/ScoreboardTableEnums'
+import type { StandingsColumn } from '@/features/scoreboards/components/shared/ScoreboardTable/types'
+import { useAppSelector } from '@/app/hooks'
+import { selectEurobasketStandings } from '@/features/scoreboards/store/selectors'
 
 const EUROBASKET_COLUMNS: StandingsColumn[] = [
   { key: 'team', label: 'Team', align: columnAlignEnum.START },

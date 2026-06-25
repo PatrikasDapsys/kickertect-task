@@ -1,5 +1,5 @@
 import './WimbledonHeader.scss'
-import tennisBallIcon from '../assets/tennis-ball.svg'
+import tennisBallIcon from '@/features/scoreboards/components/wimbledon/assets/tennis-ball.svg'
 
 export function WimbledonHeader() {
   return (

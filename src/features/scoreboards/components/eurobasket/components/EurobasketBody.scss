@@ -1,6 +1,6 @@
 @use '../eurobasket-tokens' as tokens;
-@use '../../../../../styles/colors' as colors;
-@use '../../../../../styles/variables' as vars;
+@use '@/styles/colors' as colors;
+@use '@/styles/variables' as vars;
 
 .eurobasket-body {
   &__actions {

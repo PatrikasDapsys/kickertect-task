@@ -1,5 +1,5 @@
 import { createTournamentSlice } from './createTournamentSlice'
-import { initialPremierLeagueState } from '../initialState/initialPremierLeagueState'
+import { initialPremierLeagueState } from '@/features/scoreboards/store/initialState/initialPremierLeagueState'
 
 const premierLeagueSlice = createTournamentSlice(
   'premierLeague',

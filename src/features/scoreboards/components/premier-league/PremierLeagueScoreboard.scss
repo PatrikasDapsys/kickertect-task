@@ -1,6 +1,6 @@
-@use '../../../../styles/fonts' as fonts;
+@use '@/styles/fonts' as fonts;
 @use './premier-league-tokens' as tokens;
-@use '../../../../styles/mixins' as mixins;
+@use '@/styles/mixins' as mixins;
 
 .premier-scoreboard {
   @include mixins.base-scoreboard;
