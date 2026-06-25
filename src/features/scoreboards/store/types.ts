@@ -16,9 +16,4 @@ export interface TournamentState {
   matches: Match[]
 }
 
-export interface MatchInput {
-  homeId: string
-  awayId: string
-  homeScore: number
-  awayScore: number
-}
+export type MatchInput = Omit<Match, 'id'>

@@ -20,7 +20,7 @@ const rootReducer = combineReducers({
 
 const persistConfig = {
   key: 'scoreboards',
-  version: 1,
+  version: 2,
   storage,
 }
 

@@ -1,17 +1,15 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
-import type { MatchInput, TournamentState } from './types'
+import type { Match, MatchInput, Team, TournamentState } from './types'
+import { initialPremierLeagueState } from './initialPremierLeagueState'
 
-const initialState: TournamentState = {
-  teams: [],
-  matches: [],
-}
+const initialState: TournamentState = initialPremierLeagueState
 
 const premierLeagueSlice = createSlice({
   name: 'premierLeague',
   initialState,
   reducers: {
     teamAdded: {
-      reducer: (state, action: PayloadAction<{ id: string; name: string }>) => {
+      reducer: (state, action: PayloadAction<Team>) => {
         const name = action.payload.name.trim()
         if (!name) return
         const exists = state.teams.some(
@@ -20,12 +18,12 @@ const premierLeagueSlice = createSlice({
         if (exists) return
         state.teams.push({ id: action.payload.id, name })
       },
-      prepare: (name: string) => ({
+      prepare: (name: Team['name']) => ({
         payload: { id: crypto.randomUUID(), name },
       }),
     },
     matchAdded: {
-      reducer: (state, action: PayloadAction<{ id: string } & MatchInput>) => {
+      reducer: (state, action: PayloadAction<Match>) => {
         const { id, homeId, awayId, homeScore, awayScore } = action.payload
 
         if (homeId === awayId) return
@@ -50,10 +48,10 @@ const premierLeagueSlice = createSlice({
         payload: { id: crypto.randomUUID(), ...input },
       }),
     },
-    matchRemoved: (state, action: PayloadAction<string>) => {
+    matchRemoved: (state, action: PayloadAction<Match['id']>) => {
       state.matches = state.matches.filter((match) => match.id !== action.payload)
     },
-    teamRemoved: (state, action: PayloadAction<string>) => {
+    teamRemoved: (state, action: PayloadAction<Team['id']>) => {
       const teamId = action.payload
       state.teams = state.teams.filter((team) => team.id !== teamId)
       state.matches = state.matches.filter(
