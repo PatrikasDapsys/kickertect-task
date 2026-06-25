@@ -42,6 +42,7 @@ $max-matches-height: 76px;
   &__team {
     display: inline-flex;
     align-items: center;
+    white-space: nowrap;
     gap: 6px;
   }
 
