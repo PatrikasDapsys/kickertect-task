@@ -1,5 +1,10 @@
+@use '../../../../../styles/mixins' as mixins;
+$max-table-height: calc(40px * 5);
+
 .eurobasket-table {
-  padding: 16px;
+  &__container {
+    padding: 16px;
+  }
 
   &__heading {
     font-weight: 700;

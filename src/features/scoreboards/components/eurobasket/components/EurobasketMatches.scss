@@ -1,0 +1,61 @@
+@use '../eurobasket-tokens' as tokens;
+@use '../../../../../styles/mixins' as mixins;
+
+$max-matches-height: 76px;
+
+.eurobasket-matches {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$eurobasket-gap;
+  margin-bottom: 32px;
+  font-size: 14px;
+  @include mixins.max-height-scroll($max-matches-height);
+
+  &__container {
+    padding: 16px;
+  }
+
+  &__empty {
+    color: tokens.$eurobasket-text-secondary;
+    font-size: 14px;
+  }
+
+  &__match {
+    display: flex;
+    padding: 0 4px;
+    min-height: 30px;
+    justify-content: space-between;
+    padding-bottom: 6px;
+    border-bottom: 2px solid tokens.$eurobasket-match-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__teams {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__team {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__flag {
+    border-radius: 2px;
+    font-size: 16px;
+  }
+
+  &__teams-separator {
+    color: tokens.$eurobasket-text-secondary;
+    margin-left: 6px;
+  }
+
+  &__score {
+    font-weight: 700;
+  }
+}

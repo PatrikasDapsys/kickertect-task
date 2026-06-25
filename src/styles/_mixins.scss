@@ -7,3 +7,8 @@
   box-shadow: vars.$base-scoreboard-shadow;
   overflow: hidden;
 }
+
+@mixin max-height-scroll($max-height) {
+  max-height: $max-height;
+  overflow-y: auto;
+}

@@ -26,6 +26,7 @@ export interface ScoreboardTableProps {
   rows?: StandingsRow[]
   columns?: StandingsColumn[]
   variant?: scoreboardTableVariantEnum
+  maxHeight?: number,
 }
 
 export interface ScoreboardTableRowProps {

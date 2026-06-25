@@ -13,6 +13,7 @@ import { AddTeamForm } from '../../shared/TournamentForm/AddTeamForm'
 import { AddScoreForm } from '../../shared/TournamentForm/AddScoreForm'
 import { tournamentFormVariantEnum } from '../../shared/TournamentForm/TournamentFormEnums'
 import { eurobasketFormEnum } from './eurobasketEnums'
+import { EurobasketMatches } from './EurobasketMatches'
 
 export function EurobasketBody() {
   const dispatch = useAppDispatch()
@@ -21,7 +22,6 @@ export function EurobasketBody() {
 
   const [openForm, setOpenForm] = useState<eurobasketFormEnum | null>(null)
 
-  const teamsById = new Map(teams.map((team) => [team.id, team]))
   const usedCodes = teams
     .map((team) => team.countryCode)
     .filter((code): code is string => Boolean(code))
@@ -81,44 +81,7 @@ export function EurobasketBody() {
         </div>
       )}
 
-      <div className="eurobasket-body__matches">
-        {matches.length === 0 && (
-          <div className="eurobasket-body__empty">No matches yet.</div>
-        )}
-        {matches.map((match) => {
-          const home = teamsById.get(match.homeId)
-          const away = teamsById.get(match.awayId)
-          if (!home || !away) return null
-          return (
-            <div className="eurobasket-body__match" key={match.id}>
-              <div className="eurobasket-body__match-teams">
-                <span className="eurobasket-body__match-team">
-                  {home.countryCode && (
-                    <span
-                      className={`fi fi-${home.countryCode} eurobasket-body__match-flag`}
-                      aria-hidden="true"
-                    />
-                  )}
-                  {home.name}
-                </span>
-                <span className="eurobasket-body__match-teams-separator">vs</span>
-                <span className="eurobasket-body__match-team">
-                  {away.countryCode && (
-                    <span
-                      className={`fi fi-${away.countryCode} eurobasket-body__match-flag`}
-                      aria-hidden="true"
-                    />
-                  )}
-                  {away.name}
-                </span>
-              </div>
-              <div className="eurobasket-body__match-score">
-                {match.homeScore}-{match.awayScore}
-              </div>
-            </div>
-          )
-        })}
-      </div>
+      <EurobasketMatches matches={matches} teams={teams} />
     </div>
   )
 }

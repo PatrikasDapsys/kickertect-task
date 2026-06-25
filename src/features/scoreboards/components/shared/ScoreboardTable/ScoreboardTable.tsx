@@ -48,12 +48,14 @@ export function ScoreboardTable({
   rows = DEFAULT_ROWS,
   columns = DEFAULT_COLUMNS,
   variant = scoreboardTableVariantEnum.DEFAULT,
+  maxHeight,
 }: ScoreboardTableProps) {
 
   return (
     <div
       className={cx('scoreboard-table', `scoreboard-table--${variant}`)}
       role="table"
+      style={{ maxHeight: maxHeight ? `${maxHeight}px` : 'unset' }}
     >
       <div className="scoreboard-table__row scoreboard-table__row--header" role="row">
         {columns.map((col) => (

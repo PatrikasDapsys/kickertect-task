@@ -20,12 +20,13 @@ export function EurobasketTable() {
   const rows = useAppSelector(selectEurobasketStandings)
 
   return (
-    <div className="eurobasket-table">
+    <div className="eurobasket-table__container">
       <div className="eurobasket-table__heading">Score Table:</div>
       <ScoreboardTable
         rows={rows}
         columns={EUROBASKET_COLUMNS}
         variant={scoreboardTableVariantEnum.EUROBASKET}
+        maxHeight={200}
       />
     </div>
   )
