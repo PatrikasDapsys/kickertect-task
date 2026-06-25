@@ -1,5 +1,5 @@
 import { createTournamentSlice } from './createTournamentSlice'
-import { initialEurobasketState } from './initialEurobasketState'
+import { initialEurobasketState } from '../initialState/initialEurobasketState'
 
 const eurobasketSlice = createTournamentSlice('eurobasket', initialEurobasketState)
 

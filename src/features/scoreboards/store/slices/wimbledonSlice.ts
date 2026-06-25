@@ -1,5 +1,5 @@
-import { createTournamentSlice } from './slices/createTournamentSlice'
-import { initialWimbledonState } from './initialState/initialWimbledonState'
+import { createTournamentSlice } from './createTournamentSlice'
+import { initialWimbledonState } from '../initialState/initialWimbledonState'
 
 const wimbledonSlice = createTournamentSlice('wimbledon', initialWimbledonState)
 

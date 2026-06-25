@@ -1,5 +1,5 @@
 import { createTournamentSlice } from './createTournamentSlice'
-import { initialPremierLeagueState } from './initialPremierLeagueState'
+import { initialPremierLeagueState } from '../initialState/initialPremierLeagueState'
 
 const premierLeagueSlice = createTournamentSlice(
   'premierLeague',

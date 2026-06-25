@@ -1,6 +1,6 @@
 @use '../../premier-league/premier-league-tokens' as premier;
 @use '../../eurobasket/eurobasket-tokens' as eurobasket;
-@use '../../wimbledon/wimbledon-tokens' as wimbledon;
+@use '../../wimbledon/_wimbledon-tokens' as wimbledon;
 
 .tournament-form {
   display: flex;

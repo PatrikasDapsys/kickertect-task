@@ -1,4 +1,4 @@
-import type { TournamentState } from './types'
+import type { TournamentState } from '../types'
 
 const TEAM_IDS = {
   france: 'eb-team-france',

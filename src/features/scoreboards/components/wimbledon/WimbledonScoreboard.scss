@@ -1,6 +1,6 @@
 @use '../../../../styles/mixins' as mixins;
 @use '../../../../styles/fonts' as fonts;
-@use './wimbledon-tokens.scss' as tokens;
+@use './_wimbledon-tokens' as tokens;
 
 .wimbledon-scoreboard {
   @include mixins.base-scoreboard;

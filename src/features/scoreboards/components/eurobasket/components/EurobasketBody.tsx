@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useAppDispatch, useAppSelector } from '../../../../../app/hooks'
-import { matchAdded, teamAdded } from '../../../store/eurobasketSlice'
+import { matchAdded, teamAdded } from '../../../store/slices/eurobasketSlice'
 import {
   selectEurobasketMatches,
   selectEurobasketTeams,
@@ -12,7 +12,7 @@ import { EUROBASKET_COUNTRIES } from '../../../store/countries'
 import { AddTeamForm } from '../../shared/TournamentForm/AddTeamForm'
 import { AddScoreForm } from '../../shared/TournamentForm/AddScoreForm'
 import { tournamentFormVariantEnum } from '../../shared/TournamentForm/TournamentFormEnums'
-import { eurobasketFormEnum } from './eurobasketEnums'
+import { eurobasketFormEnum } from './EurobasketEnums'
 import { EurobasketMatches } from './EurobasketMatches'
 
 export function EurobasketBody() {

@@ -5,14 +5,11 @@ standings tables — **Premier League**, **Eurobasket**, and **Wimbledon** — w
 users can add teams/players, record match results, and see a standings table
 that auto-updates and sorts by points.
 
-> Status: project scaffold (Step 1). Tournament logic, state, and UI are added
-> in later steps.
-
 ## Tech Stack
 
 - **React 18 + TypeScript + Vite**
-- **State:** `useReducer` + React Context (planned)
-- **Persistence:** `localStorage` behind a repository abstraction (planned)
+- **State:** Redux Toolkit (one slice per tournament)
+- **Persistence:** `redux-persist` with a localStorage `WebStorage` adapter
 - **Styling:** SCSS with CSS variables per theme, mobile-first
 - **Fonts:** `@fontsource` (Inter/Roboto, Montserrat, Space Mono)
 - **Icons:** FontAwesome; **Flags:** `flag-icons` CSS library
@@ -48,15 +45,10 @@ npm run preview
 
 ```
 src/
-  app/                  # app shell / composition root (App.tsx, main.tsx)
-  components/           # shared, theme-agnostic UI primitives
+  app/                  # composition root: App.tsx, main.tsx, store, hooks, storage
   features/
     scoreboards/        # scoreboards feature
-      components/        # scoreboard UI
-      state/             # context + reducer
-      domain/            # pure logic (scoring, standings, match rules)
-      services/          # persistence (repository + localStorage impl)
-      hooks/             # useTournament wiring
-  types/                # shared TypeScript contracts
-  styles/               # global SCSS: tokens, mixins, themes
+      components/        # scoreboard UI (per tournament + shared)
+      store/            # Redux Toolkit slices, selectors, standings logic, initial state
+  styles/               # global SCSS: tokens, mixins, breakpoints, fonts
 ```

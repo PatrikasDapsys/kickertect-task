@@ -1,6 +1,6 @@
 import './PremierLeagueBody.scss'
 import { useAppDispatch, useAppSelector } from '../../../../../app/hooks'
-import { matchAdded, teamAdded } from '../../../store/premierLeagueSlice'
+import { matchAdded, teamAdded } from '../../../store/slices/premierLeagueSlice'
 import {
   selectPremierLeagueMatches,
   selectPremierLeagueTeams,

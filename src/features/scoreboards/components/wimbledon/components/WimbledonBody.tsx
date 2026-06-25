@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { useAppDispatch, useAppSelector } from '../../../../../app/hooks'
-import { matchAdded, teamAdded } from '../../../store/wimbledonSlice'
+import { matchAdded, teamAdded } from '../../../store/slices/wimbledonSlice'
 import {
   selectWimbledonMatches,
   selectWimbledonTeams,
@@ -11,7 +11,7 @@ import {
 import { AddTeamForm } from '../../shared/TournamentForm/AddTeamForm'
 import { AddScoreForm } from '../../shared/TournamentForm/AddScoreForm'
 import { tournamentFormVariantEnum } from '../../shared/TournamentForm/TournamentFormEnums'
-import { wimbledonFormEnum } from './wimbledonEnums'
+import { wimbledonFormEnum } from './WimbledonEnums'
 
 export function WimbledonBody() {
   const dispatch = useAppDispatch()
