@@ -1,13 +1,13 @@
-@use '../premier-league-tokens' as tokens;
+@use '../../../../../styles/colors' as colors;
 
 .premier-league-header {
-  background-color: tokens.$premier-header-bg;
+  background-color: colors.$brand-premier-purple;
   padding: 16px 20px;
 
   &__title {
     margin: 0;
     font-size: 20px;
     font-weight: 700;
-    color: tokens.$premier-white;
+    color: colors.$white;
   }
 }

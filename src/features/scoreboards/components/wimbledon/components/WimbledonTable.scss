@@ -1,13 +1,14 @@
 @use '../_wimbledon-tokens' as tokens;
+@use '../../../../../styles/colors' as colors;
 
 .wimbledon-table {
   padding: 20px;
 
   &__icon--win {
-    color: green;
+    color: colors.$green-success;
   }
 
   &__icon--loss {
-    color: red;
+    color: colors.$red-error;
   }
 }

@@ -1,6 +1,5 @@
-@use '../../premier-league/premier-league-tokens' as premier;
-@use '../../eurobasket/eurobasket-tokens' as eurobasket;
-@use '../../wimbledon/_wimbledon-tokens' as wimbledon;
+@use '../../../../../styles/colors' as colors;
+@use '../../../../../styles/variables' as vars;
 
 .tournament-form {
   display: flex;
@@ -39,7 +38,7 @@
     margin: 0;
     font-size: 12px;
     font-weight: 600;
-    color: #d32f2f;
+    color: colors.$red-error;
   }
 
   &__control {
@@ -79,89 +78,89 @@
 
   // Premier League theme: light card with blue accents
   &--premier {
-    background-color: premier.$premier-section-bg;
+    background-color: colors.$gray-50;
     padding: 12px;
-    border-radius: premier.$premier-radius;
+    border-radius: vars.$base-scoreboard-radius;
 
     .tournament-form__label {
-      color: premier.$premier-text;
+      color: colors.$black;
     }
 
     input.tournament-form__control {
-      color: premier.$premier-text;
-      background-color: premier.$premier-white;
-      border: 1px solid premier.$premier-border;
+      color: colors.$black;
+      background-color: colors.$white;
+      border: 1px solid colors.$gray-400;
 
       &::placeholder {
-        color: premier.$premier-placeholder;
+        color: colors.$gray-600;
       }
 
       &:focus {
-        border-color: premier.$premier-primary;
+        border-color: colors.$brand-premier-blue;
       }
     }
 
     select.tournament-form__control {
-      color: premier.$premier-text;
-      background-color: premier.$premier-section-bg-secondary;
-      border: 1px solid premier.$premier-border;
+      color: colors.$black;
+      background-color: colors.$gray-200;
+      border: 1px solid colors.$gray-400;
 
       &:focus {
-        border-color: premier.$premier-primary;
+        border-color: colors.$brand-premier-blue;
       }
     }
 
     .tournament-form__button {
-      color: premier.$premier-white;
-      background-color: premier.$premier-primary;
+      color: colors.$white;
+      background-color: colors.$brand-premier-blue;
     }
   }
 
   // Eurobasket theme: dark surface with orange accents
   &--eurobasket {
     .tournament-form__label {
-      color: eurobasket.$eurobasket-text;
+      color: colors.$white;
     }
 
     .tournament-form__control {
-      color: #111;
-      background-color: #fff;
+      color: colors.$near-black;
+      background-color: colors.$white;
       border: 1px solid transparent;
 
       &::placeholder {
-        color: #6c757d;
+        color: colors.$gray-600;
       }
     }
 
     .tournament-form__button {
-      color: eurobasket.$eurobasket-text;
-      background-color: eurobasket.$eurobasket-primary;
+      color: colors.$white;
+      background-color: colors.$brand-eurobasket-orange;
     }
   }
 
   // Wimbledon theme: cool neutrals with green accent
   &--wimbledon {
     .tournament-form__label {
-      color: #111;
+      color: colors.$near-black;
     }
 
     .tournament-form__control {
-      color: #111;
-      background-color: #fff;
-      border: 1px solid #ced4da;
+      color: colors.$near-black;
+      background-color: colors.$white;
+      border: 1px solid colors.$gray-500;
 
       &::placeholder {
-        color: #6c757d;
+        color: colors.$gray-600;
       }
 
       &:focus {
-        border-color: wimbledon.$wimbledon-bg;
+        border-color: colors.$brand-wimbledon-green;
       }
     }
 
     .tournament-form__button {
-      color: wimbledon.$wimbledon-text;
-      background-color: wimbledon.$wimbledon-bg;
+      color: colors.$white;
+      background-color: colors.$brand-wimbledon-green;
     }
   }
 }

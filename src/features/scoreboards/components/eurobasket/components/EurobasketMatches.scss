@@ -1,5 +1,6 @@
 @use '../eurobasket-tokens' as tokens;
 @use '../../../../../styles/mixins' as mixins;
+@use '../../../../../styles/colors' as colors;
 
 $max-matches-height: 76px;
 
@@ -16,7 +17,7 @@ $max-matches-height: 76px;
   }
 
   &__empty {
-    color: tokens.$eurobasket-text-secondary;
+    color: colors.$gray-300;
     font-size: 14px;
   }
 
@@ -26,7 +27,7 @@ $max-matches-height: 76px;
     min-height: 30px;
     justify-content: space-between;
     padding-bottom: 6px;
-    border-bottom: 2px solid tokens.$eurobasket-match-border;
+    border-bottom: 2px solid colors.$brand-eurobasket-green-dark;
 
     &:last-child {
       border-bottom: none;
@@ -52,7 +53,7 @@ $max-matches-height: 76px;
   }
 
   &__teams-separator {
-    color: tokens.$eurobasket-text-secondary;
+    color: colors.$gray-300;
     margin-left: 6px;
   }
 

@@ -1,12 +1,12 @@
-@use '../_wimbledon-tokens' as tokens;
+@use '../../../../../styles/colors' as colors;
 
 .wimbledon-header {
-  background-color: tokens.$wimbledon-bg;
+  background-color: colors.$brand-wimbledon-green;
   padding: 16px 20px;
 
   &__title {
     margin: 0;
-    color: tokens.$wimbledon-text;
+    color: colors.$white;
     display: flex;
     align-items: center;
     gap: 20px;

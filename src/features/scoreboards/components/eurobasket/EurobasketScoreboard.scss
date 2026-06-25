@@ -1,11 +1,11 @@
 @use '../../../../styles/mixins' as mixins;
 @use '../../../../styles/fonts' as fonts;
-@use './eurobasket-tokens' as tokens;
+@use '../../../../styles/colors' as colors;
 
 .eurobasket-scoreboard {
   @include mixins.base-scoreboard;
   font-family: fonts.$font-eurobasket;
-  background-color: tokens.$eurobasket-bg;
+  background-color: colors.$brand-eurobasket-green;
   padding: 16px;
-  color: tokens.$eurobasket-text;
+  color: colors.$white;
 }

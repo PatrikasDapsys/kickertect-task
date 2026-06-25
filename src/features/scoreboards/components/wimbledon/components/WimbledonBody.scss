@@ -1,4 +1,6 @@
 @use '../_wimbledon-tokens' as tokens;
+@use '../../../../../styles/colors' as colors;
+@use '../../../../../styles/variables' as vars;
 
 .wimbledon-body {
   &__actions {
@@ -9,10 +11,10 @@
   }
 
   &__actions-button {
-    background-color: tokens.$wimbledon-bg;
-    color: tokens.$wimbledon-text;
+    background-color: colors.$brand-wimbledon-green;
+    color: colors.$white;
     padding: 12px 14px;
-    border-radius: tokens.$wimbledon-radius;
+    border-radius: vars.$base-scoreboard-radius;
     font-size: 16px;
     cursor: pointer;
     transition: opacity 0.15s ease;
@@ -22,14 +24,14 @@
     }
 
     &--secondary {
-      background-color: tokens.$wimbledon-action;
+      background-color: colors.$brand-wimbledon-purple;
     }
   }
 
   &__form {
     margin: 0 20px 20px;
     padding: 16px;
-    background-color: #f1f3f5;
-    border-radius: tokens.$wimbledon-radius;
+    background-color: colors.$gray-150;
+    border-radius: vars.$base-scoreboard-radius;
   }
 }

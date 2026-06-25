@@ -1,4 +1,6 @@
 @use '../eurobasket-tokens' as tokens;
+@use '../../../../../styles/colors' as colors;
+@use '../../../../../styles/variables' as vars;
 
 .eurobasket-body {
   &__actions {
@@ -11,10 +13,10 @@
 
   &__actions-button {
     padding: 8px 12px;
-    background-color: tokens.$eurobasket-primary;
-    color: tokens.$eurobasket-text;
+    background-color: colors.$brand-eurobasket-orange;
+    color: colors.$white;
     border: none;
-    border-radius: tokens.$eurobasket-radius;
+    border-radius: vars.$base-scoreboard-radius;
     cursor: pointer;
     transition: opacity 0.15s ease;
 
@@ -26,7 +28,7 @@
   &__form {
     margin-bottom: 24px;
     padding: 16px;
-    background-color: tokens.$eurobasket-match-border;
-    border-radius: tokens.$eurobasket-radius;
+    background-color: colors.$brand-eurobasket-green-dark;
+    border-radius: vars.$base-scoreboard-radius;
   }
 }
