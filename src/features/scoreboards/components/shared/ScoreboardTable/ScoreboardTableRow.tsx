@@ -15,6 +15,12 @@ export function ScoreboardTableRow({ row, columns }: ScoreboardTableRowProps) {
             col.emphasis && 'scoreboard-table__cell--emphasis',
           )}
         >
+          {col.key === 'team' && row.countryCode && (
+            <span
+              className={`fi fi-${row.countryCode} scoreboard-table__flag`}
+              aria-hidden="true"
+            />
+          )}
           {row[col.key]}
         </span>
       ))}

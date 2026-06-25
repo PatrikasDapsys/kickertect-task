@@ -1,7 +1,11 @@
-import type { columnAlignEnum } from './ScoreboardTableEnums'
+import type {
+  columnAlignEnum,
+  scoreboardTableVariantEnum,
+} from './ScoreboardTableEnums'
 
 export interface StandingsRow {
   team: string
+  countryCode?: string
   playedCount: number
   winCount: number
   drawCount: number
@@ -21,6 +25,7 @@ export interface StandingsColumn {
 export interface ScoreboardTableProps {
   rows?: StandingsRow[]
   columns?: StandingsColumn[]
+  variant?: scoreboardTableVariantEnum
 }
 
 export interface ScoreboardTableRowProps {

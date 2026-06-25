@@ -1,5 +1,5 @@
 import './ScoreboardTable.scss'
-import { columnAlignEnum } from './ScoreboardTableEnums'
+import { columnAlignEnum, scoreboardTableVariantEnum } from './ScoreboardTableEnums'
 import { ScoreboardTableRow } from './ScoreboardTableRow'
 import type { ScoreboardTableProps, StandingsColumn, StandingsRow } from './types'
 import { cx } from '../utils/cx'
@@ -47,10 +47,14 @@ const DEFAULT_ROWS: StandingsRow[] = [
 export function ScoreboardTable({
   rows = DEFAULT_ROWS,
   columns = DEFAULT_COLUMNS,
+  variant = scoreboardTableVariantEnum.DEFAULT,
 }: ScoreboardTableProps) {
 
   return (
-    <div className="scoreboard-table" role="table">
+    <div
+      className={cx('scoreboard-table', `scoreboard-table--${variant}`)}
+      role="table"
+    >
       <div className="scoreboard-table__row scoreboard-table__row--header" role="row">
         {columns.map((col) => (
           <span

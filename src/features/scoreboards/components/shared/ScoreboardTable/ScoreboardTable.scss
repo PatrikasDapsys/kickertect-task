@@ -33,4 +33,21 @@
       font-weight: 700;
     }
   }
+
+  &__flag {
+    margin-right: 8px;
+    border-radius: 2px;
+  }
+
+  &--eurobasket {
+    color: #fff;
+
+    .scoreboard-table__row {
+      border-bottom-color: rgb(255 255 255 / 12%);
+
+      &--header {
+        background-color: rgb(255 255 255 / 6%);
+      }
+    }
+  }
 }

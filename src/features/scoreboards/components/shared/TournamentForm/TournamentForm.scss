@@ -1,0 +1,128 @@
+@use '../../premier-league/premier-league-tokens' as premier;
+@use '../../eurobasket/eurobasket-tokens' as eurobasket;
+
+.tournament-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  &__row {
+    display: flex;
+    gap: 12px;
+
+    .tournament-form__control {
+      flex: 1;
+      min-width: 100px;
+    }
+  }
+
+  &__score-row {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__score-team {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: calc(50% - 6px);
+  }
+
+  &__label {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__control {
+    padding: 6px;
+    font-family: inherit;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+  }
+
+  select.tournament-form__control {
+    cursor: pointer;
+  }
+
+  &__button {
+    padding: 8px 20px;
+    font-family: inherit;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &--block {
+      width: 100%;
+    }
+  }
+
+  // Premier League theme: light card with blue accents
+  &--premier {
+    background-color: premier.$premier-section-bg;
+    padding: 12px;
+    border-radius: premier.$premier-radius;
+
+    .tournament-form__label {
+      color: premier.$premier-text;
+    }
+
+    input.tournament-form__control {
+      color: premier.$premier-text;
+      background-color: premier.$premier-white;
+      border: 1px solid premier.$premier-border;
+
+      &::placeholder {
+        color: premier.$premier-placeholder;
+      }
+
+      &:focus {
+        border-color: premier.$premier-primary;
+      }
+    }
+
+    select.tournament-form__control {
+      color: premier.$premier-text;
+      background-color: premier.$premier-section-bg-secondary;
+      border: 1px solid premier.$premier-border;
+
+      &:focus {
+        border-color: premier.$premier-primary;
+      }
+    }
+
+    .tournament-form__button {
+      color: premier.$premier-white;
+      background-color: premier.$premier-primary;
+    }
+  }
+
+  // Eurobasket theme: dark surface with orange accents
+  &--eurobasket {
+    .tournament-form__label {
+      color: eurobasket.$eurobasket-text;
+    }
+
+    .tournament-form__control {
+      color: #111;
+      background-color: #fff;
+      border: 1px solid transparent;
+
+      &::placeholder {
+        color: #6c757d;
+      }
+    }
+
+    .tournament-form__button {
+      color: eurobasket.$eurobasket-text;
+      background-color: eurobasket.$eurobasket-primary;
+    }
+  }
+}

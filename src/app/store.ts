@@ -11,16 +11,18 @@ import {
 } from 'redux-persist'
 import { createLocalStorage } from './storage'
 import premierLeagueReducer from '../features/scoreboards/store/premierLeagueSlice'
+import eurobasketReducer from '../features/scoreboards/store/eurobasketSlice'
 
 const storage = createLocalStorage()
 
 const rootReducer = combineReducers({
   premierLeague: premierLeagueReducer,
+  eurobasket: eurobasketReducer,
 })
 
 const persistConfig = {
   key: 'scoreboards',
-  version: 2,
+  version: 3,
   storage,
 }
 

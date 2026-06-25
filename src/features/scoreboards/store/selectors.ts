@@ -11,4 +11,17 @@ export const selectPremierLeagueStandings = createSelector(
   (teams, matches) => computeStandings(teams, matches),
 )
 
-export { selectPremierLeagueTeams, selectPremierLeagueMatches }
+const selectEurobasketTeams = (state: RootState) => state.eurobasket.teams
+const selectEurobasketMatches = (state: RootState) => state.eurobasket.matches
+
+export const selectEurobasketStandings = createSelector(
+  [selectEurobasketTeams, selectEurobasketMatches],
+  (teams, matches) => computeStandings(teams, matches),
+)
+
+export {
+  selectPremierLeagueTeams,
+  selectPremierLeagueMatches,
+  selectEurobasketTeams,
+  selectEurobasketMatches,
+}

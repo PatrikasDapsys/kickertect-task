@@ -1,6 +1,7 @@
 export interface Team {
   id: string
   name: string
+  countryCode?: string
 }
 
 export interface Match {

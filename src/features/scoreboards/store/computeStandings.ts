@@ -10,6 +10,7 @@ export function computeStandings(teams: Team[], matches: Match[]): StandingsRow[
       team.id,
       {
         team: team.name,
+        countryCode: team.countryCode,
         playedCount: 0,
         winCount: 0,
         drawCount: 0,
