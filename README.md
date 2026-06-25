@@ -2,6 +2,7 @@
 
 Manage three tournaments — **Premier League**, **Eurobasket**, and **Wimbledon** — from a single page. Add teams or players, enter match results, and watch the standings update in real time.
 
+**Live demo:** [kickertech-task-ten.vercel.app](https://kickertech-task-ten.vercel.app/)  
 **Repository:** [github.com/PatrikasDapsys/kickertech-task](https://github.com/PatrikasDapsys/kickertech-task)
 
 ## Overview
@@ -97,8 +98,12 @@ Standings are derived on read — slices store only `teams` and `matches`, and s
 
 ## Deployment
 
-Build the static output and deploy `dist/` to any static host (Vercel, Netlify, GitHub Pages, etc.). If serving from a subpath, set the `base` option in `vite.config.ts`.
+The app is deployed on Vercel: [kickertech-task-ten.vercel.app](https://kickertech-task-ten.vercel.app/)
+
+To build locally:
 
 ```bash
 npm run build
 ```
+
+The output in `dist/` can be deployed to any static host (Vercel, Netlify, GitHub Pages, etc.). If serving from a subpath, set the `base` option in `vite.config.ts`.
