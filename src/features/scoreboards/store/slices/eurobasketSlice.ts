@@ -3,7 +3,6 @@ import { initialEurobasketState } from '../initialState/initialEurobasketState'
 
 const eurobasketSlice = createTournamentSlice('eurobasket', initialEurobasketState)
 
-export const { teamAdded, matchAdded, matchRemoved, teamRemoved } =
-  eurobasketSlice.actions
+export const { teamAdded, matchAdded } = eurobasketSlice.actions
 
 export default eurobasketSlice.reducer

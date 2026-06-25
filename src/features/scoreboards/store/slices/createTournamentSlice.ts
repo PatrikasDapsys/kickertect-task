@@ -62,18 +62,6 @@ export function createTournamentSlice(
           payload: { id: crypto.randomUUID(), ...input },
         }),
       },
-      matchRemoved: (state, action: PayloadAction<Match['id']>) => {
-        state.matches = state.matches.filter(
-          (match) => match.id !== action.payload,
-        )
-      },
-      teamRemoved: (state, action: PayloadAction<Team['id']>) => {
-        const teamId = action.payload
-        state.teams = state.teams.filter((team) => team.id !== teamId)
-        state.matches = state.matches.filter(
-          (match) => match.homeId !== teamId && match.awayId !== teamId,
-        )
-      },
     },
   })
 }

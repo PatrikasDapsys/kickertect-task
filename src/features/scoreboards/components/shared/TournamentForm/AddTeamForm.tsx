@@ -1,5 +1,5 @@
 import './TournamentForm.scss'
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import { cx } from '../utils/cx'
 import type { AddTeamFormProps } from './types'
 import { tournamentFormVariantEnum } from './TournamentFormEnums'
@@ -11,10 +11,13 @@ export function AddTeamForm({
   buttonLabel = 'Add',
   options,
   excludeCodes = [],
+  existingNames = [],
   onSubmit,
 }: AddTeamFormProps) {
+  const controlId = useId()
   const [textValue, setTextValue] = useState('')
   const [selectedCode, setSelectedCode] = useState('')
+  const [error, setError] = useState('')
 
   const isSelectMode = Boolean(options)
   const availableOptions = options?.filter(
@@ -26,27 +29,54 @@ export function AddTeamForm({
       const country = options?.find(
         (option) => option.countryCode === selectedCode,
       )
-      if (!country) return
+      if (!country) {
+        setError('Please select an option.')
+        return
+      }
       onSubmit(country.name, country.countryCode)
       setSelectedCode('')
+      setError('')
       return
     }
 
     const name = textValue.trim()
-    if (!name) return
+    if (!name) {
+      setError('Name is required.')
+      return
+    }
+    const isDuplicate = existingNames.some(
+      (existing) => existing.toLowerCase() === name.toLowerCase(),
+    )
+    if (isDuplicate) {
+      setError('That name already exists.')
+      return
+    }
+
     onSubmit(name)
     setTextValue('')
+    setError('')
   }
+
+  const isSubmitDisabled = isSelectMode ? !selectedCode : !textValue.trim()
 
   return (
     <div className={cx('tournament-form', `tournament-form--${variant}`)}>
-      {label && <label className="tournament-form__label">{label}</label>}
+      {label && (
+        <label className="tournament-form__label" htmlFor={controlId}>
+          {label}
+        </label>
+      )}
       <div className="tournament-form__row">
         {isSelectMode ? (
           <select
+            id={controlId}
             className="tournament-form__control"
+            aria-label={label ? undefined : 'Select option'}
             value={selectedCode}
-            onChange={(event) => setSelectedCode(event.target.value)}
+            onChange={(event) => {
+              setSelectedCode(event.target.value)
+              setError('')
+            }}
           >
             <option value="">Select country</option>
             {availableOptions?.map((option) => (
@@ -57,11 +87,16 @@ export function AddTeamForm({
           </select>
         ) : (
           <input
+            id={controlId}
             type="text"
             className="tournament-form__control"
+            aria-label={label ? undefined : placeholder}
             placeholder={placeholder}
             value={textValue}
-            onChange={(event) => setTextValue(event.target.value)}
+            onChange={(event) => {
+              setTextValue(event.target.value)
+              setError('')
+            }}
             onKeyDown={(event) => {
               if (event.key === 'Enter') handleSubmit()
             }}
@@ -71,10 +106,16 @@ export function AddTeamForm({
           type="button"
           className="tournament-form__button"
           onClick={handleSubmit}
+          disabled={isSubmitDisabled}
         >
           {buttonLabel}
         </button>
       </div>
+      {error && (
+        <p className="tournament-form__error" role="alert">
+          {error}
+        </p>
+      )}
     </div>
   )
 }

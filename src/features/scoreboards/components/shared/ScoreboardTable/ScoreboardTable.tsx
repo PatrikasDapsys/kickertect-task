@@ -1,7 +1,7 @@
 import './ScoreboardTable.scss'
 import { columnAlignEnum, scoreboardTableVariantEnum } from './ScoreboardTableEnums'
 import { ScoreboardTableRow } from './ScoreboardTableRow'
-import type { ScoreboardTableProps, StandingsColumn, StandingsRow } from './types'
+import type { ScoreboardTableProps, StandingsColumn } from './types'
 import { cx } from '../utils/cx'
 
 const DEFAULT_COLUMNS: StandingsColumn[] = [
@@ -13,44 +13,12 @@ const DEFAULT_COLUMNS: StandingsColumn[] = [
   { key: 'totalPoints', label: 'Pts', emphasis: true },
 ]
 
-const DEFAULT_ROWS: StandingsRow[] = [
-  { team: 'Man U', 
-    playedCount: 3, 
-    winCount: 2, 
-    drawCount: 1, 
-    lossCount: 0, 
-    totalPoints: 7
-   },
-  { team: 'Liverpool', 
-    playedCount: 3, 
-    winCount: 2, 
-    drawCount: 0, 
-    lossCount: 1, 
-    totalPoints: 6
-   },
-  { team: 'Arsenal', 
-    playedCount: 3, 
-    winCount: 1, 
-    drawCount: 2, 
-    lossCount: 0, 
-    totalPoints: 5
-   },
-  { team: 'Chelsea', 
-    playedCount: 3, 
-    winCount: 1, 
-    drawCount: 1, 
-    lossCount: 1, 
-    totalPoints: 4
-   },
-]
-
 export function ScoreboardTable({
-  rows = DEFAULT_ROWS,
+  rows = [],
   columns = DEFAULT_COLUMNS,
   variant = scoreboardTableVariantEnum.DEFAULT,
   maxHeight,
 }: ScoreboardTableProps) {
-
   return (
     <div
       className={cx('scoreboard-table', `scoreboard-table--${variant}`)}
@@ -72,13 +40,15 @@ export function ScoreboardTable({
           </span>
         ))}
       </div>
-      {rows.map((row) => (
-        <ScoreboardTableRow
-          key={row.team}
-          row={row}
-          columns={columns}
-        />
-      ))}
+      {rows.length === 0 ? (
+        <div className="scoreboard-table__empty" role="row">
+          <span role="cell">No teams yet.</span>
+        </div>
+      ) : (
+        rows.map((row) => (
+          <ScoreboardTableRow key={row.team} row={row} columns={columns} />
+        ))
+      )}
     </div>
   )
 }

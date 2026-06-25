@@ -20,6 +20,7 @@ export function PremierLeagueBody() {
         variant={tournamentFormVariantEnum.PREMIER}
         label="Add Team"
         placeholder="Team name"
+        existingNames={teams.map((team) => team.name)}
         onSubmit={(name) => dispatch(teamAdded(name))}
       />
       <AddScoreForm

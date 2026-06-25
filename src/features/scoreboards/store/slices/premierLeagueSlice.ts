@@ -6,7 +6,6 @@ const premierLeagueSlice = createTournamentSlice(
   initialPremierLeagueState,
 )
 
-export const { teamAdded, matchAdded, matchRemoved, teamRemoved } =
-  premierLeagueSlice.actions
+export const { teamAdded, matchAdded } = premierLeagueSlice.actions
 
 export default premierLeagueSlice.reducer

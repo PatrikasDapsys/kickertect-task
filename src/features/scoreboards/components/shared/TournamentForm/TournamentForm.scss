@@ -35,6 +35,13 @@
     font-weight: 700;
   }
 
+  &__error {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: #d32f2f;
+  }
+
   &__control {
     padding: 6px;
     font-family: inherit;
@@ -58,6 +65,11 @@
 
     &:hover {
       opacity: 0.9;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
     }
 
     &--block {

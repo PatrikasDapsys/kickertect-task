@@ -52,6 +52,7 @@ export function WimbledonBody() {
             variant={tournamentFormVariantEnum.WIMBLEDON}
             placeholder="Player name"
             buttonLabel="Add"
+            existingNames={teams.map((team) => team.name)}
             onSubmit={(name) => {
               dispatch(teamAdded(name))
               setOpenForm(null)

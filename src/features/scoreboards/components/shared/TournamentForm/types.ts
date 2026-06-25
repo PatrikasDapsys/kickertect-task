@@ -9,6 +9,7 @@ export interface AddTeamFormProps {
   buttonLabel?: string
   options?: Country[]
   excludeCodes?: string[]
+  existingNames?: string[]
   onSubmit: (name: string, countryCode?: string) => void
 }
 
